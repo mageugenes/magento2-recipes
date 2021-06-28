@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="1column">
+    <head>
+        <css src="Mageugenes_Recipes::css/recipes.css"/>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Dinner Recipe Ideas</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="mageugenes.recipes.block.list"
+                   template="Mageugenes_Recipes::recipes.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Mageugenes\Recipes\ViewModel\Recipes</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

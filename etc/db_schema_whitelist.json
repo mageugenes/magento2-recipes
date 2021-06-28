@@ -1,0 +1,15 @@
+{
+    "mageugenes_recipes": {
+        "column": {
+            "id": true,
+            "title": true,
+            "category": true,
+            "time_to_make": true,
+            "image": true,
+            "link": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

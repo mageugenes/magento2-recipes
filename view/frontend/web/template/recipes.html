@@ -1,0 +1,40 @@
+<div class="mageugenes-recipes">
+    <!-- ko foreach: {data: recipes, as: 'recipe'} -->
+    <div class="mageugenes-recipe">
+        <div class="recipe-title">
+            <h2>
+                <a data-bind="attr: {href: recipe.url}">
+                    <span data-bind="text: recipe.title"></span>
+                </a>
+            </h2>
+        </div>
+        <!-- ko if: (recipe.image) -->
+        <div data-bind="attr: {class: recipe.link ? 'recipe-image youtube' : 'recipe-image'}">
+            <a data-bind="attr: {href: recipe.url}">
+                <img data-bind="attr: {src: recipe.image}" />
+            </a>
+        </div>
+        <!-- /ko -->
+        <!-- ko if: (recipe.time_to_make) -->
+        <div>
+            <span class="recipe-key" data-bind="i18n: 'Time to make:'"></span><span data-bind="text: recipe.time_to_make"></span>
+        </div>
+        <!-- /ko -->
+        <div class="recipe-link">
+            <!-- ko if: (recipe.link) -->
+            <a data-bind="attr: {href: recipe.link, id: 'recipe-link-' + recipe.id}"><span data-bind="i18n: 'View video >>'"></span></a>
+            <!-- /ko -->
+        </div>
+        <!-- ko if: (recipe.category) -->
+        <div class="recipe-category">
+            <span data-bind="text: recipe.category"></span>
+        </div>
+        <!-- /ko -->
+    </div>
+    <!-- /ko -->
+    <!-- ko if: ($data.recipes.length == 0) -->
+    <div class="message info empty">
+        <span>There is no recipes.</span>
+    </div>
+    <!-- /ko -->
+</div>

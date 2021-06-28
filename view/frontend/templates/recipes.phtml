@@ -1,0 +1,34 @@
+<?php
+
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+$recipesViewModel = $block->getData('viewModel');
+?>
+
+<div class="recipes-container" data-bind="scope: 'recipes'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <div id="mageugenes-recipes-modal" style="display:none">
+        <div class="modal-content">
+            <h2 class="modal-title"></h2>
+            <p class="modal-inner-content">
+                <iframe class="youtube-object" width="640" height="360" src=""  allowfullscreen="true" allowscriptaccess="always" frameborder="0"></iframe>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "recipes": {
+                        "component": "Mageugenes_Recipes/js/view/recipes",
+                        "recipes": <?= $recipesViewModel->getDataJson(); ?>
+                    }
+                }
+            }
+        }
+    }
+</script>
