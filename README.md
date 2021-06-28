@@ -1,2 +1,1 @@
-# magento2-recipes
-Dinner Recipe Ideas.
+# Dinner Recipe Ideas
